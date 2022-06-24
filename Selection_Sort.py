@@ -9,7 +9,6 @@ for i in range(len(Array)):
     # unsorted array 
     min_index = i
     for j in range(i+1, len(Array)):
-        print(j)
         if  Array[min_index] > Array[j]:
             min_index = j
     
