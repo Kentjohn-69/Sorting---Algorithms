@@ -3,7 +3,7 @@
 
  This is me trying to learn a sorting algorithm that focus in a array.
 
-1. Bubble sort
+1. BubbleSort
 Bubble Sort is the simplest sorting algorithm that works by repeatedly swapping the adjacent elements if they are in the wrong   order. This algorithm is not suitable for large data sets as its average and worst-case time complexity is quite high.
 
 Input: arr[] = {5, 1, 4, 2, 8}
@@ -31,7 +31,7 @@ The algorithm needs one whole pass without any swap to know it is sorted.
 ( 1 2 4 5 8 ) –> ( 1 2 4 5 8 ) 
 ( 1 2 4 5 8 ) –> ( 1 2 4 5 8 ) 
 
-2. Insertion 
+2. InsertionSort
 Insertion sort is a simple sorting algorithm that works similar to the way you sort playing cards in your hands. The array is virtually split into a sorted and an unsorted part. Values from the unsorted part are picked and placed at the correct position in the sorted part.
 
 Consider an example: arr[]: {12, 11, 13, 5, 6}
@@ -73,7 +73,7 @@ Here, also swapping makes 11 and 6 unsorted hence, swap again
    5, 6, 11, 12, 13   
 Finally, the array is completely sorted.
 
-3. Selection
+3. SelectionSort
 
 The selection sort algorithm sorts an array by repeatedly finding the minimum element (considering ascending order) from the unsorted part and putting it at the beginning. 
 
@@ -111,4 +111,83 @@ Fifth Pass:
 
 At last the largest value present in the array automatically get placed at the last position in the array
 The resulted array is the sorted array.
-   11, 12, 22, 25, 64.   
+   11, 12, 22, 25, 64.
+
+4. MergeSort   
+
+The Merge Sort algorithm is a sorting algorithm that is based on the Divide and Conquer paradigm. In this algorithm, the array is initially divided into two equal halves and then they are combined in a sorted manner.
+
+Merge Sort Working Process:
+Think of it as a recursive algorithm continuously splits the array in half until it cannot be further divided. This means that if the array becomes empty or has only one element left, the dividing will stop, i.e. it is the base case to stop the recursion. If the array has multiple elements, split the array into halves and recursively invoke the merge sort on each of the halves. Finally, when both halves are sorted, the merge operation is applied. Merge operation is the process of taking two smaller sorted arrays and combining them to eventually make a larger one.
+
+Algorithm:
+step 1: start
+
+step 2: declare array and left, right, mid variable
+
+step 3: perform merge function.
+    if left > right
+        return
+    mid= (left+right)/2
+    mergesort(array, left, mid)
+    mergesort(array, mid+1, right)
+    merge(array, left, mid, right)
+
+step 4: Stop
+
+5. QuickSort
+
+Like Merge Sort, QuickSort is a Divide and Conquer algorithm. It picks an element as a pivot and partitions the given array around the picked pivot. There are many different versions of quickSort that pick pivot in different ways. 
+
+*Always pick the first element as a pivot.
+*Always pick the last element as a pivot (implemented below)
+*Pick a random element as a pivot.
+*Pick median as the pivot.
+
+The key process in quickSort is a partition(). The target of partitions is, given an array and an element x of an array as the pivot, put x at its correct position in a sorted array and put all smaller elements (smaller than x) before x, and put all greater elements (greater than x) after x. All this should be done in linear time.
+
+$Pseudo Code for recursive QuickSort function:
+
+/* low  –> Starting index,  high  –> Ending index */
+
+quickSort(arr[], low, high) {
+
+    if (low < high) {
+
+        /* pi is partitioning index, arr[pi] is now at right place */
+
+        pi = partition(arr, low, high);
+
+        quickSort(arr, low, pi – 1);  // Before pi
+
+        quickSort(arr, pi + 1, high); // After pi
+
+    }
+
+}
+$Pseudo code for partition()  
+
+/* This function takes last element as pivot, places the pivot element at its correct position in sorted array, and places all smaller (smaller than pivot) to left of pivot and all greater elements to right of pivot */
+
+partition (arr[], low, high)
+
+{
+
+    // pivot (Element to be placed at right position)
+pivot = arr[high];  
+
+ i = (low – 1)  // Index of smaller element and indicates the 
+// right position of pivot found so far
+
+for (j = low; j <= high- 1; j++){
+
+ // If current element is smaller than the pivot
+if (arr[j] < pivot){
+i++;    // increment index of smaller element
+ swap arr[i] and arr[j]
+     }
+ }
+
+    swap arr[i + 1] and arr[high])
+return (i + 1)
+}
