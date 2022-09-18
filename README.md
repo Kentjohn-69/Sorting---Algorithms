@@ -1,7 +1,11 @@
 # Sorting - Algorithms
  Just example of sorting
 
- This is me trying to learn a sorting algorithm that focus in a array.
+This is me trying to learn a sorting algorithm that focus in a array.
+
+A Sorting Algorithm is used to rearrange a given array or list 
+elements according to a comparison operator on the elements. 
+The comparison operator is used to decide the new order of elements in the respective data structure.
 
 1. BubbleSort
 Bubble Sort is the simplest sorting algorithm that works by repeatedly swapping the adjacent elements if they are in the wrong   order. This algorithm is not suitable for large data sets as its average and worst-case time complexity is quite high.
