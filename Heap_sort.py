@@ -11,7 +11,7 @@ def heapify(arr, N, i):
 
 	# See if left child of root exists and is
 	# greater than root
-	if l < N and arr[largest] < arr[l]:
+	if l < N and arr[largest] < arr[l]: 
 		largest = l
 
 	# See if right child of root exists and is
@@ -44,7 +44,7 @@ def heapSort(arr):
 
 # Driver's code
 if __name__ == '__main__':
-	arr = [12, 11, 13, 5, 6, 7]
+	arr = [12, 11, 13, 5, 6, 7, 9, 54, 12, 42, 34]
 
 	# Function call
 	heapSort(arr)
